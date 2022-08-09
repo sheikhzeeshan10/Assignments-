@@ -1,0 +1,9 @@
+{
+	"name": "datafactoryazre",
+	"location": "westeurope",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "2ac7a744-0fa8-424a-80ac-4e52b75ade31",
+		"tenantId": "48f3cb6e-7807-49aa-a7b8-15d98edcaeb3"
+	}
+}
