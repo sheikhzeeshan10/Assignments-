@@ -52,15 +52,19 @@
 				"fromTransform derive(Month = toInteger(trim(left(toString(right(Creation_date, length(Creation_date)-3)), 2), '()'))) ~> derivedColumn1",
 				"derivedColumn1 split(Month < 4,",
 				"     Month >= 4,",
-				"     disjoint: false) ~> split1@(tillMarch, afterMarch)",
-				"split1@tillMarch sink(allowSchemaDrift: true,",
+				"     disjoint: false) ~> split1@(BeforeMarch, afterMarch)",
+				"split1@BeforeMarch sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
+				"     partitionFileNames:['BeforeMarchUsers'],",
 				"     skipDuplicateMapInputs: true,",
-				"     skipDuplicateMapOutputs: true) ~> sink1",
+				"     skipDuplicateMapOutputs: true,",
+				"     partitionBy('hash', 1)) ~> sink1",
 				"split1@afterMarch sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
+				"     partitionFileNames:['AfterMarcusers'],",
 				"     skipDuplicateMapInputs: true,",
-				"     skipDuplicateMapOutputs: true) ~> sink2"
+				"     skipDuplicateMapOutputs: true,",
+				"     partitionBy('hash', 1)) ~> sink2"
 			]
 		}
 	}
