@@ -1,0 +1,52 @@
+{
+	"name": "fromTrensform",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorage2",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "part-00000-6e5f1543-28af-4cbd-8af0-68a2d9a96f9c-c000.csv",
+				"container": "transformation"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "User_ID",
+				"type": "String"
+			},
+			{
+				"name": "Employer_Number",
+				"type": "String"
+			},
+			{
+				"name": "Creation_date",
+				"type": "String"
+			},
+			{
+				"name": "Username",
+				"type": "String"
+			},
+			{
+				"name": "Password",
+				"type": "String"
+			},
+			{
+				"name": "Level",
+				"type": "String"
+			},
+			{
+				"name": "TRIAL267",
+				"type": "String"
+			}
+		]
+	}
+}
